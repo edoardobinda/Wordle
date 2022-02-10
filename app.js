@@ -45,7 +45,7 @@ window.onload = function (){
     }// Shuffle function ends here
     shuffle(arrayAllCapital);
 
-    var selected = arrayAllCapital[0]; // This is the chosen word that will be on the display
+    selected = arrayAllCapital[0]; // This is the chosen word that will be on the display
     console.log("This is arrayAllCapital shuffled: " + arrayAllCapital);
     console.log("This is Selected: " + selected);
 
@@ -91,9 +91,7 @@ window.onload = function (){
     let chosenword = "";
 
 for (let i = 1; i < 27; i++) {
-
     let buttoninput = document.getElementById("divinput"+i);
-
     buttoninput.onclick = function (){
         if (div1.innerText == ""){
             div1.innerText = this.innerText;
@@ -111,8 +109,30 @@ for (let i = 1; i < 27; i++) {
             div5.innerText = this.innerText;
         }
         chosenword = div1.innerText + div2.innerText +div3.innerText +div4.innerText +div5.innerText;
-        console.log(chosenword);
-
     }
+}// END OF FOR LOOP
 
+function submit(){
+    if (arrayAllCapital.indexOf(chosenword) == -1){
+        alert("This word is empty or not in the dictionary")
+    }
 }
+function cancel(){
+    if (div5.innerText != ""){
+        div5.innerText = "";
+    }
+    else if (div4.innerText != ""){
+        div4.innerText = "";
+    }
+    else if (div3.innerText != ""){
+        div3.innerText = "";
+    }
+    else if (div2.innerText != ""){
+        div2.innerText = "";
+    }
+    else if (div1.innerText != ""){
+        div1.innerText = "";
+    }
+}
+
+
