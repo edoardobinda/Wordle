@@ -112,11 +112,15 @@ for (let i = 1; i < 27; i++) {
     }
 }// END OF FOR LOOP
 
+
+//SUBMIT BUTTON
 function submit(){
     if (arrayAllCapital.indexOf(chosenword) == -1){
         alert("This word is empty or not in the dictionary")
     }
 }
+
+//CANCEL BUTTON
 function cancel(){
     if (div5.innerText != ""){
         div5.innerText = "";
