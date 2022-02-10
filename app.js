@@ -48,7 +48,7 @@ window.onload = function (){
     var selected = arrayAllCapital[0]; // This is the chosen word that will be on the display
     console.log("This is arrayAllCapital shuffled: " + arrayAllCapital);
     console.log("This is Selected: " + selected);
-    console.log("ciaogizmo");
+
     /*
     // Section: Make sure first word of the array DO NOT REPEAT TWICE
     for (let i = 0; i < arrayAllCapital.length; i++) {
@@ -73,7 +73,7 @@ window.onload = function (){
     */
 
     /*Section: "PUSH" each letter to the correct DIV in the display
-    var div1 = document.getElementById("divdisplay1");
+    var div1 = document.getElementById("divdisplay1").inner;
     var div2 = document.getElementById("divdisplay2");
     var div3 = document.getElementById("divdisplay3");
     var div4 = document.getElementById("divdisplay4");
@@ -88,16 +88,31 @@ window.onload = function (){
     var div3 = document.getElementById("divdisplay3");
     var div4 = document.getElementById("divdisplay4");
     var div5 = document.getElementById("divdisplay5");
-    var div1txt = div1.innerText;
+    let chosenword = "";
 
 for (let i = 1; i < 27; i++) {
 
     let buttoninput = document.getElementById("divinput"+i);
 
     buttoninput.onclick = function (){
+        if (div1.innerText == ""){
+            div1.innerText = this.innerText;
+        }
+        else if (div2.innerText == ""){
+            div2.innerText = this.innerText;
+        }
+        else if (div3.innerText == ""){
+            div3.innerText = this.innerText;
+        }
+        else if (div4.innerText == ""){
+            div4.innerText = this.innerText;
+        }
+        else if (div5.innerText == ""){
+            div5.innerText = this.innerText;
+        }
+        chosenword = div1.innerText + div2.innerText +div3.innerText +div4.innerText +div5.innerText;
+        console.log(chosenword);
 
-        console.log("fuckin mother bloody fuck bitch");
-        console.log(this.innerText);
-        console.log("ciaomamma");
     }
+
 }
