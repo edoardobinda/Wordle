@@ -26,10 +26,10 @@
     flex-direction: row;
     padding: 3%;
 }
-#divinput1, #divinput2, #divinput3, #divinput4, #divinput5, #divinput6, #divinput7, #divinput8, #divinput9, #divinput10, 
-#divinput11, #divinput12, #divinput13, #divinput14, #divinput15, #divinput16, #divinput17, #divinput18, #divinput19, 
+#divinput1, #divinput2, #divinput3, #divinput4, #divinput5, #divinput6, #divinput7, #divinput8, #divinput9, #divinput10,
+#divinput11, #divinput12, #divinput13, #divinput14, #divinput15, #divinput16, #divinput17, #divinput18, #divinput19,
 #divinput20, #divinput21, #divinput22, #divinput23, #divinput24, #divinput25, #divinput26 {
     margin: 0 auto;
     border: solid 1px black;
     padding: 15px;
-} 
+}
