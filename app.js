@@ -48,7 +48,7 @@ window.onload = function (){
     var selected = arrayAllCapital[0]; // This is the chosen word that will be on the display
     console.log("This is arrayAllCapital shuffled: " + arrayAllCapital);
     console.log("This is Selected: " + selected);
-    console.log("ciaociao");
+    console.log("ciao");
     /*
     // Section: Make sure first word of the array DO NOT REPEAT TWICE
     for (let i = 0; i < arrayAllCapital.length; i++) {
