@@ -1,3 +1,4 @@
+// First Part starts here
 
 //VAR DECLARATION
 var array = ["Cacca", "AMIco", "AmaCa", "BallO", "Burro", "gattO", "VIGNa", "zucca", "ulivo"];
@@ -8,6 +9,8 @@ var arrayCapShufNotRepeated = [];
 
 //ONLOAD FUNCTION START
 window.onload = function (){
+
+    // Preliminary instructions:
     // What this function should do:
     // This function, at the load of the page, should do the following:
     // CAPITALIZE every word of the Array
@@ -116,7 +119,10 @@ for (let i = 1; i < 27; i++) {
 //SUBMIT BUTTON
 function submit(){
     if (arrayAllCapital.indexOf(chosenword) == -1){
-        alert("This word is empty or not in the dictionary")
+        alert("The word is not in the dictionary or there are blank spaces")
+    }
+    else{
+        console.log("fa parte");
     }
 }
 
@@ -138,5 +144,9 @@ function cancel(){
         div1.innerText = "";
     }
 }
+// First Part ends here
 
 
+// Second part Starts here
+// Preliminary Instructions:
+// We must control the places of letters in "CHOSENWORD" against "arrayAllCapital"
