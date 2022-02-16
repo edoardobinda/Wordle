@@ -6,6 +6,9 @@ var arrayAllCapital = [];
 var selected = "";
 var arrayCapShufNotRepeated = [];
 
+let arrayForSelected = [];
+let arrayForChosen = [];
+
 
 //ONLOAD FUNCTION START
 window.onload = function (){
@@ -51,6 +54,10 @@ window.onload = function (){
     selected = arrayAllCapital[0]; // This is the chosen word that will be on the display
     console.log("This is arrayAllCapital shuffled: " + arrayAllCapital);
     console.log("This is Selected: " + selected);
+    console.log(typeof selected);
+    arrayForSelected.push(selected.split(""));
+    console.log(arrayForSelected);
+    
 
     /*
     // Section: Make sure first word of the array DO NOT REPEAT TWICE
@@ -122,7 +129,8 @@ function submit(){
         alert("The word is not in the dictionary or there are blank spaces")
     }
     else{
-        console.log("fa parte");
+        arrayForChosen.push(chosenword.split(""));
+        console.log(arrayForChosen);
     }
 }
 
@@ -149,4 +157,5 @@ function cancel(){
 
 // Second part Starts here
 // Preliminary Instructions:
-// We must control the places of letters in "CHOSENWORD" against "arrayAllCapital"
+// We must control the places of letters in "CHOSENWORD" against "Selected" ("Selected" is a typeof STRING and is already all capital lettes)
+

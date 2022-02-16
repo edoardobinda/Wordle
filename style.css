@@ -33,3 +33,13 @@
     border: solid 1px black;
     padding: 15px;
 }
+
+.correctLetter{
+    color: rgb(3, 105, 3);
+}
+.maybeLetter{
+    color: rgb(230, 246, 3);
+}
+.wrongLetter{
+    color: rgb(209, 1, 1);
+}
