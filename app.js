@@ -134,7 +134,7 @@ console.log(arrayAllCapital);
 //SUBMIT BUTTON                                                 /*["G", "A", "T", "T", "O"]*/
 function submit(){
 
-    if (arrayAllCapital.indexOf(chosenword) == -1){
+    if (arrayAllCapital.isOf(chosenword) == -1){
         alert("The word is not in the dictionary or there are blank spaces")
     }
     else{
@@ -160,12 +160,17 @@ function submit(){
                 console.log("lettera presente ma nel posto errato");
                 maybeLetters.push(arrayForChosen[i]);
                 console.log("this is maybeLetters array", maybeLetters);
-                    if (document.getElementById("divdisplay"+(i+1)).classList.contains("maybeLetter")){
+                for (let i = 0; i < arrayForChosen.length; i++) {
+                    //if (document.getElementById("divdisplay"+(i+1)) if there's more than one than just color the first result)
+                }
+                    /*if (document.getElementById("divdisplay"+(i+1)).classList.contains("maybeLetter")){
                         document.getElementById("divdisplay"+(i+1)).classList.remove("maybeLetter");
                     }
                     else{
                     document.getElementById("divdisplay"+(i+1)).classList.add("maybeLetter");
-                    }
+                    }*/
+
+
                 }
             }
 
