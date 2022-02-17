@@ -35,11 +35,14 @@
 }
 
 .correctLetter{
-    color: rgb(3, 105, 3);
+    color: rgb(255, 255, 255);
+    background-color: green;
 }
 .maybeLetter{
-    color: rgb(230, 246, 3);
+    color: rgb(0, 16, 240);
+    background-color: rgb(230, 246, 3);;
 }
 .wrongLetter{
-    color: rgb(209, 1, 1);
+    color: rgb(255, 255, 255);
+    background-color:rgb(209, 1, 1);
 }

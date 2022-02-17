@@ -1,7 +1,7 @@
 // First Part starts here
 
 //VAR DECLARATION
-var array = ["Cacca", "AMIco", "AmaCa", "BallO", "Burro", "gattO", "VIGNa", "zucca", "ulivo"];
+var array = ["Cacca", "AMIco", "AmaCa", "BallO", "Burro", "gattO", "VIGNa", "zucca", "ulivo", "Bolla"];
 var arrayAllCapital = [];
 var selected = "";
 var arrayCapShufNotRepeated = [];
@@ -95,7 +95,7 @@ window.onload = function (){
     var div4 = document.getElementById("divdisplay4");
     var div5 = document.getElementById("divdisplay5");*/
 
-    //DOPO DEVI FARE VAR ES. VAR DIV1 = DIV1.INNERHTML (O .INNERTEXT)
+    //DOPO DEVI FARE VAR ES. VAR div1 = div1.INNERHTML (O .INNERTEXT)
 
 } //ONLOAD FUNCTION ENDS HERE /////////////////////////////////////////////////////////////////
 
@@ -128,35 +128,44 @@ for (let i = 1; i < 27; i++) {
     }
 }// END OF FOR LOOP                 /*["Cacca", "AMIco", "AmaCa", "BallO", "Burro", "gattO", "VIGNa", "zucca", "ulivo"]*/
 
+
+console.log(arrayAllCapital);
                                                                 /*["B", "A", "L", "L", "O"]*/
 //SUBMIT BUTTON                                                 /*["G", "A", "T", "T", "O"]*/
 function submit(){
+
     if (arrayAllCapital.indexOf(chosenword) == -1){
         alert("The word is not in the dictionary or there are blank spaces")
     }
-    else{                                           /* selected = [["A", "M", "I", "C", "O"]]*/
+    else{
         arrayForChosen = chosenword.split("");
         console.log("this is arrayforchosen" , arrayForChosen);
-        console.log(arrayForChosen[0] == arrayForSelected[0]);
-        for (let i = 0; i < arrayForChosen.length; i ++) {
-            if (arrayForChosen[i] == arrayForSelected[i]) {
+
+        for (let i = 0; i < arrayForChosen.length; i ++) {                      /*["U", "L", "I", "V", "O"]*/
+
+            if (arrayForChosen[i] == arrayForSelected[i]) {                     /*["B", "O", "L", "L", "A"]*/
             console.log("lettera giusta al posto giusto");
             okLetters.push(arrayForChosen[i]);
-            console.log("this is okLetter array", okLetters);              /* selected = ["A", "M", "I", "C", "O"]*/
-            arrayForChosen[i].settAttribute("class", "correctLetter");  /* chosen =    ["V", "I", "G", "N", "A"]*/
+            console.log("this is okLetter array", okLetters);
+            document.getElementById("divdisplay"+(i+1)).setAttribute("class", "correctLetter");
             }
             else {
                 if (arrayForSelected.includes(arrayForChosen[i]) == false){
                 console.log("lettera non presente");
                 wrongLetters.push(arrayForChosen[i]);
                 console.log("this is wrongLetters array", wrongLetters);
-                arrayForChosen[i].settAttribute("class", "wrongLetter")
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");
                 }
                 else {
                 console.log("lettera presente ma nel posto errato");
                 maybeLetters.push(arrayForChosen[i]);
                 console.log("this is maybeLetters array", maybeLetters);
-                arrayForChosen[i].settAttribute("class", "maybeLetter")
+                    if (document.getElementById("divdisplay"+(i+1)).classList.contains("maybeLetter")){
+                        document.getElementById("divdisplay"+(i+1)).classList.remove("maybeLetter");
+                    }
+                    else{
+                    document.getElementById("divdisplay"+(i+1)).classList.add("maybeLetter");
+                    }
                 }
             }
 
@@ -166,8 +175,10 @@ function submit(){
 
 //CANCEL BUTTON
 function cancel(){
-    if (div5.innerText != ""){
-        div5.innerText = "";
+    if (div5
+.innerText != ""){
+        div5
+.innerText = "";
     }
     else if (div4.innerText != ""){
         div4.innerText = "";
