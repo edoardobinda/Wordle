@@ -162,6 +162,9 @@ function submit(){
                 console.log("this is maybeLetters array", maybeLetters);
                 for (let i = 0; i < arrayForChosen.length; i++) {
                     //if (document.getElementById("divdisplay"+(i+1)) if there's more than one than just color the first result)
+                    // for info look https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+                    // part of "Counting instances of values in an object"
+                    // Probably Reduce + Splice : reduce tell you how many elements there are, splice we can modify the original array
                 }
                     /*if (document.getElementById("divdisplay"+(i+1)).classList.contains("maybeLetter")){
                         document.getElementById("divdisplay"+(i+1)).classList.remove("maybeLetter");
