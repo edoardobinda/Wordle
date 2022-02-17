@@ -9,6 +9,12 @@ var arrayCapShufNotRepeated = [];
 let arrayForSelected = [];
 let arrayForChosen = [];
 
+let okLetters = [];
+let wrongLetters = [];
+let maybeLetters = [];
+
+
+
 
 //ONLOAD FUNCTION START
 window.onload = function (){
@@ -52,12 +58,12 @@ window.onload = function (){
     shuffle(arrayAllCapital);
 
     selected = arrayAllCapital[0]; // This is the chosen word that will be on the display
-    console.log("This is arrayAllCapital shuffled: " + arrayAllCapital);
+    /*console.log("This is arrayAllCapital shuffled: " + arrayAllCapital);
+
+    console.log("'This is the string typeof'" , typeof selected);*/
+    arrayForSelected = selected.split("");
     console.log("This is Selected: " + selected);
-    console.log(typeof selected);
-    arrayForSelected.push(selected.split(""));
-    console.log(arrayForSelected);
-    
+    console.log("this is arrayforselected" , arrayForSelected);
 
     /*
     // Section: Make sure first word of the array DO NOT REPEAT TWICE
@@ -120,19 +126,43 @@ for (let i = 1; i < 27; i++) {
         }
         chosenword = div1.innerText + div2.innerText +div3.innerText +div4.innerText +div5.innerText;
     }
-}// END OF FOR LOOP
+}// END OF FOR LOOP                 /*["Cacca", "AMIco", "AmaCa", "BallO", "Burro", "gattO", "VIGNa", "zucca", "ulivo"]*/
 
-
-//SUBMIT BUTTON
+                                                                /*["B", "A", "L", "L", "O"]*/
+//SUBMIT BUTTON                                                 /*["G", "A", "T", "T", "O"]*/
 function submit(){
     if (arrayAllCapital.indexOf(chosenword) == -1){
         alert("The word is not in the dictionary or there are blank spaces")
     }
-    else{
-        arrayForChosen.push(chosenword.split(""));
-        console.log(arrayForChosen);
+    else{                                           /* selected = [["A", "M", "I", "C", "O"]]*/
+        arrayForChosen = chosenword.split("");
+        console.log("this is arrayforchosen" , arrayForChosen);
+        console.log(arrayForChosen[0] == arrayForSelected[0]);
+        for (let i = 0; i < arrayForChosen.length; i ++) {
+            if (arrayForChosen[i] == arrayForSelected[i]) {
+            console.log("lettera giusta al posto giusto");
+            okLetters.push(arrayForChosen[i]);
+            console.log("this is okLetter array", okLetters);              /* selected = ["A", "M", "I", "C", "O"]*/
+            arrayForChosen[i].settAttribute("class", "correctLetter");  /* chosen =    ["V", "I", "G", "N", "A"]*/
+            }
+            else {
+                if (arrayForSelected.includes(arrayForChosen[i]) == false){
+                console.log("lettera non presente");
+                wrongLetters.push(arrayForChosen[i]);
+                console.log("this is wrongLetters array", wrongLetters);
+                arrayForChosen[i].settAttribute("class", "wrongLetter")
+                }
+                else {
+                console.log("lettera presente ma nel posto errato");
+                maybeLetters.push(arrayForChosen[i]);
+                console.log("this is maybeLetters array", maybeLetters);
+                arrayForChosen[i].settAttribute("class", "maybeLetter")
+                }
+            }
+
+        }/*LOOP ENDS*/
     }
-}
+} /*FUNCTION ENDS*/
 
 //CANCEL BUTTON
 function cancel(){
