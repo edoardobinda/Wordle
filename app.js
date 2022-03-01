@@ -66,6 +66,14 @@ function submit(){
 
     for (let i = 0; i < arrayForChosen.length; i ++){
 
+        var arrayletterTofindinChosen = [];
+        console.log("array letter to find prima" , arrayletterTofindinChosen);
+        var letterToFindInSelected = [...selected].filter(l => l === arrayForChosen[i]).length;
+        var letterTofindinChosen = [...chosenword].filter(l => l === arrayForChosen[i]).length;
+        arrayletterTofindinChosen.push(letterTofindinChosen);
+        console.log("array letter to find dopo" ,arrayletterTofindinChosen);
+
+
         if (arrayForChosen[i] == arrayForSelected[i]){
             greenarray.push(arrayForChosen[i]);
             console.log("greenarray", greenarray);
@@ -76,10 +84,18 @@ function submit(){
                 redarray.push(arrayForChosen[i]);
                 document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");
             }
+
+            //else if (il numero di lettere che sto cercando in chosen è maggiore che quella stessa lettera in selected)
+                    //ALLORA ANCHE QUESTA CONDIZIONE MI MANDA LA LETTERA IN ROSSO
+            else if ((letterTofindinChosen > letterToFindInSelected) && (arrayletterTofindinChosen.length > 1)){
+                redarray.push(arrayForChosen[i]);
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");        
+            }
             else {
                 yellowarray.push(arrayForChosen[i]);
                 console.log("yellowarray", yellowarray);
-                for (let i = 0; i < greenarray.length; i++){
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeLetter");
+                /*for (let i = 0; i < greenarray.length; i++){
                     for (let j = 0; j < yellowarray.length; j++){
                         var letterTofind = [...selected].filter(l => l === yellowarray[i]).length;
                         var letterTofindinChosen = [...chosenword].filter(l => l === yellowarray[i]).length;
@@ -89,10 +105,8 @@ function submit(){
                             redarray.push(yellowarray[i]);
                         }
                     }
-                }
-                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeLetter");
+                }*/
             }
-            console.log(redarray); //PROVA
         }
     }/*LOOP ENDS*/
 } /*FUNCTION ENDS*/
