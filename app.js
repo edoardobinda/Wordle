@@ -1,6 +1,6 @@
 //VAR DECLARATION
 
-var array = ["STELO"];
+var array = ["STELO", "NONIO", "TACIT"];
 var arrayAllCapital = [];
 var selected = "";
 var arrayCapShufNotRepeated = [];
