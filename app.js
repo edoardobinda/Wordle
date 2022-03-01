@@ -24,7 +24,7 @@ window.onload = function (){
     selected = arrayAllCapital[0]; // This is the SELECTED word that will be on the display
     arrayForSelected = selected.split("");
     
-    console.console.log(selected);
+    console.log(selected);
 
 } //ONLOAD FUNCTION ENDS HERE /////////////////////////////////////////////////////////////////
 
