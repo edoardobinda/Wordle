@@ -92,7 +92,7 @@ function submit(){
                 }
                 document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeLetter");
             }
-            console.log(redarray);
+            console.log(redarray); //PROVA
         }
     }/*LOOP ENDS*/
 } /*FUNCTION ENDS*/
