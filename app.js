@@ -1,6 +1,6 @@
 //VAR DECLARATION
 
-var array = ["STELO", "NONIO", "TACIT"];
+var array = ["STELO"];
 var arrayAllCapital = [];
 var selected = "";
 var arrayCapShufNotRepeated = [];
@@ -21,10 +21,11 @@ window.onload = function (){
         arrayAllCapital.push(array[i].toLocaleUpperCase());
     }
 
-    selected = arrayAllCapital[0]; // This is the SELECTED word that will be on the display
+    selected = arrayAllCapital[0];
+    console.log(selected); // This is the SELECTED word that will be on the display
     arrayForSelected = selected.split("");
     
-    console.log(selected);
+    
 
 } //ONLOAD FUNCTION ENDS HERE /////////////////////////////////////////////////////////////////
 
