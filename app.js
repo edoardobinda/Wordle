@@ -1,6 +1,6 @@
 //VAR DECLARATION
 
-var array = ["Nonio"];
+var array = ["Stelo"];
 var arrayAllCapital = [];
 var selected = "";
 var arrayCapShufNotRepeated = [];
@@ -13,6 +13,7 @@ let redarray = [];
 let yellowarray = [];
 
 
+
 //ONLOAD FUNCTION START
 window.onload = function (){
     // Section: CAPITALIZE every word of the Array
@@ -21,7 +22,7 @@ window.onload = function (){
     }
 
     selected = arrayAllCapital[0]; // This is the SELECTED word that will be on the display
-    console.log(selected);
+    console.log("this is selected", selected);
     arrayForSelected = selected.split("");
     console.log("this is arrayforselected" , arrayForSelected);
 
@@ -63,34 +64,46 @@ function submit(){
     console.log("chosenword=" , chosenword);
     arrayForChosen = chosenword.split("");
     console.log("this is arrayforchosen" , arrayForChosen);
+    let control = [];
 
-    for (let i = 0; i < arrayForChosen.length; i ++){
+    for (let i = 0; i < arrayForChosen.length; i++){
 
         var arrayletterTofindinChosen = [];
-        console.log("array letter to find prima" , arrayletterTofindinChosen);
+
         var letterToFindInSelected = [...selected].filter(l => l === arrayForChosen[i]).length;
         var letterTofindinChosen = [...chosenword].filter(l => l === arrayForChosen[i]).length;
-        arrayletterTofindinChosen.push(letterTofindinChosen);
-        console.log("array letter to find dopo" ,arrayletterTofindinChosen);
 
+        console.log(letterToFindInSelected);
+        console.log(letterTofindinChosen);
 
+        if (letterTofindinChosen > 1){
+            arrayletterTofindinChosen.push(letterTofindinChosen);
+            control.push(arrayForChosen[i]);
+        }
+        console.log("THIS IS ARRAY TO FIND IN CHOSE", arrayletterTofindinChosen);
+        console.log("this is control array", control);
+        
+
+        // SE LE LETTERE ALLA POSIZIONE "i" SONO IDENTICHE ==== V E R D E !!!
         if (arrayForChosen[i] == arrayForSelected[i]){
             greenarray.push(arrayForChosen[i]);
-            console.log("greenarray", greenarray);
             document.getElementById("divdisplay"+(i+1)).setAttribute("class", "correctLetter");
         }
+
+        //SE LA LETTERA ALLA POSIZIONE "i" NON C'E' DENTRO ALLA PAROLA SELECTED ==== ROSSO!
+        if (arrayForSelected.includes(arrayForChosen[i]) == false){
+            redarray.push(arrayForChosen[i]);
+            document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");
+        }
+
+        //POSSIBILITA' DI LETTERE GIALLE
         else {
-            if (arrayForSelected.includes(arrayForChosen[i]) == false){
-                redarray.push(arrayForChosen[i]);
-                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");
+
+            if ((letterTofindinChosen > letterToFindInSelected) && (control.length == 1)){
+                yellowarray.push(arrayForChosen[i]);
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeletter");        
             }
 
-            //else if (il numero di lettere che sto cercando in chosen è maggiore che quella stessa lettera in selected)
-                    //ALLORA ANCHE QUESTA CONDIZIONE MI MANDA LA LETTERA IN ROSSO
-            else if ((letterTofindinChosen > letterToFindInSelected) && (arrayletterTofindinChosen.length > 1)){
-                redarray.push(arrayForChosen[i]);
-                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");        
-            }
             else {
                 yellowarray.push(arrayForChosen[i]);
                 console.log("yellowarray", yellowarray);
@@ -109,5 +122,7 @@ function submit(){
             }
         }
     }/*LOOP ENDS*/
+console.log("greenarray", greenarray);
+console.log("redarray", redarray);
+console.log("yellowarray", yellowarray);
 } /*FUNCTION ENDS*/
-
