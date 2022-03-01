@@ -1,6 +1,6 @@
 //VAR DECLARATION
 
-var array = ["Stelo"];
+var array = ["STELO"];
 var arrayAllCapital = [];
 var selected = "";
 var arrayCapShufNotRepeated = [];
@@ -69,7 +69,6 @@ function submit(){
     for (let i = 0; i < arrayForChosen.length; i++){
 
         var arrayletterTofindinChosen = [];
-
         var letterToFindInSelected = [...selected].filter(l => l === arrayForChosen[i]).length;
         var letterTofindinChosen = [...chosenword].filter(l => l === arrayForChosen[i]).length;
 
@@ -91,19 +90,25 @@ function submit(){
         }
 
         //SE LA LETTERA ALLA POSIZIONE "i" NON C'E' DENTRO ALLA PAROLA SELECTED ==== ROSSO!
-        if (arrayForSelected.includes(arrayForChosen[i]) == false){
+        else if (arrayForSelected.includes(arrayForChosen[i]) == false){
             redarray.push(arrayForChosen[i]);
             document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");
         }
 
         //POSSIBILITA' DI LETTERE GIALLE
         else {
-
             if ((letterTofindinChosen > letterToFindInSelected) && (control.length == 1)){
                 yellowarray.push(arrayForChosen[i]);
-                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeletter");        
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeLetter");        
             }
-
+            else if ((letterTofindinChosen > letterToFindInSelected) && (control.length > 1)){
+                redarray.push(arrayForChosen[i]);
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "wrongLetter");
+            }
+            else if ((letterTofindinChosen == letterToFindInSelected) && (arrayForChosen[i] != arrayForSelected[i])){
+                yellowarray.push(arrayForChosen[i]);
+                document.getElementById("divdisplay"+(i+1)).setAttribute("class", "maybeLetter");
+            }
             else {
                 yellowarray.push(arrayForChosen[i]);
                 console.log("yellowarray", yellowarray);
