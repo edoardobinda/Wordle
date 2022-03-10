@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: row;
     padding: 3%;
+    width:500px ;
 }
 #divdisplay1, #divdisplay2, #divdisplay3, #divdisplay4, #divdisplay5{
     margin: 0 auto;
@@ -16,8 +17,10 @@
 .sectioninputs{
     border: solid 1px blue;
     display: block;
+    margin: 0 auto;
     flex-direction: row;
     margin-top: 100px;
+    max-width: 700px;
 }
 .sectioninputQP, .sectioninputAL, .sectioninputZM{
     border: solid 1px black;
